@@ -9,7 +9,7 @@ Partie concernant l'interface graphique, la préparation de la requête de tir e
 3. [Auteur]
 
 
-## 1.Jouer à Capa
+## 1. Jouer à Capa
 ### 1.1 Accéder au site 
 
 Pour visualiser l'interface graphique correspondant à une partie, rendez-vous à l'adresse suivante: 
@@ -20,9 +20,12 @@ Vous pouvez simuler le fait de jouer sous un pseudonyme en tapant votre pseudo d
 Pour comprendre l'interface et l'ensembmle des options qui y sont disponibles, suivez la documentation utilisateur 
 
 
-## 2.Réutiliser le code
+## 2. Réutiliser le code
 ### 2.1 Installation en local
 L'installation en local est détaillée dans la documentation d'installation
 
 ### 2.2 Architecture du code
  L'architecture du code et les problèmes rencontrées lors du développement sont détaillés dans le Carnet de Laboratoire et dans la documentation programmeur.
+
+## 3. Auteur
+* **Vincent HEAU** [VincentHeau](https://github.com/VincentHeau)
