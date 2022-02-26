@@ -1,0 +1,354 @@
+/* CSS qui s'applique sur la page capa.html
+Pour mieux pouvoir comprendre le css et le placement des div sur la page,
+voir la partie CSS de la documentation programmeur
+
+ HEAU Vincent- Sujet 2 - CAPA
+ */
+
+
+/*Ensemble des instructions relatives aux couleurs et au positionnement des div sur la page*/
+
+  #contenu-jeu{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 1fr 0fr;
+    min-height: 50vh;
+
+
+
+    background: linear-gradient(217deg, #3f87a6, rgba(255,0,0,0) 70.71%),
+                linear-gradient(127deg, #6b1085, rgba(0,255,0,0) 70.71%),
+                linear-gradient(336deg, #f69d3c, rgba(0,0,255,0) 70.71%);
+  }
+
+  #jeu{
+    background-color:blue;
+    grid-column:1;
+    grid-row: 1;
+    height:100%;
+    width:100%;
+  }
+
+  #info{
+    z-index: 501;
+    background: linear-gradient(to right, black,grey);
+    grid-column:2;
+    grid-row: 1;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    height: 95vh;
+  }
+
+  #info-jeu{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    display:flex;
+
+    text-align: center;
+    color:white;
+    height:10%;
+  }
+
+  #capacite{
+    grid-column: 1;
+    font-family: 'Play', sans-serif;
+    font-size: large;
+    text-align: center;
+    text-shadow:0 0 1px white,0 0 100px white,0px 0px 50px white, 0 0 50px white;
+    color:#6FD01C;
+  }
+  #logo{
+    text-align: center;
+    margin-left: 25%;
+    grid-column: 2;
+  }
+  img{
+    max-width: 110%;
+    max-height: 135%;
+  }
+  #info-chat{
+    margin: 20px;
+    border-radius: 10px;
+
+    text-align: center;
+    height:45%;
+    background: linear-gradient(145deg, #696969, lightgreen);;
+    overflow-y: scroll;
+  }
+  #info-websocket{
+    margin: 20px;
+    padding: 5px;
+    border-radius: 10px;
+
+    text-align: center;
+    height:40%;
+    background: linear-gradient(145deg, darkgreen, lightgreen);
+  }
+
+
+  /* La carte: map est le nom de la div de la carte */
+  #map{
+    height: 100%;
+    width: 100%;
+
+    grid-column: 1;
+    border: 1px solid black;
+  }
+
+
+/* Pour le style des barres latérales */
+
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+
+  ::-webkit-scrollbar-thumb {
+    background: #00B7E8;
+    border-radius: 10px;
+  }
+
+
+
+  /* Gestion des boutons */
+
+  .bouton {
+  text-align: center;
+  font-size:140%;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 4px;
+  background-color: grey;
+  text-shadow: 0 1px 1px rgba(153, 129, 51, 0.8);
+  outline:none;
+  }
+  .bouton:hover,
+  .bouton:focus {
+    color: white;
+
+    box-shadow: 0 1px 0 rgba(255,0,255,.1),
+                0 0 1px 1px rgba(255,255,255,.3) inset,
+                0 1px rgba(255,255,255,.4) inset,
+                0 0 5px rgba(0,0,0,1);
+    border-color: rgba(255, 255, 255, .2);
+  }
+
+  .bouton:active {
+    background-color: red;
+    border: 1px solid black;
+  }
+
+
+
+/*Deuxième style de bouton pour le bouton envoyer*/
+
+  .bouton_envoyer {
+  text-align: center;
+  font-size:95%;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 4px;
+  background-color: #00B7E8;
+  border-color: rgba(255, 255, 255, .2);
+  text-shadow: 0 1px 1px rgba(153, 129, 51, 0.8);
+  outline:none;
+  }
+  .bouton_envoyer:hover,
+  .bouton_envoyer:focus {
+    color: white;
+
+    border-color: white;
+  }
+
+  .bouton_envoyer:active {
+    background-color: darkblue;
+    border: 1px solid black;
+  }
+
+
+
+/*Style utilisé pour un bouton ( source Julien Crego
+   https://juliencrego.com/astuces/personnaliser-les-boutons-radio-et-checkbox-avec-css/)
+
+   Personnaliser une checkbox peut se faire de plusieurs manières, je choisis le modèle de Julien Crego, en masquant le
+   modèle de base et en affichant un modèle par dessus.
+   Je réutilise l'astuce du rem pour la taille que l'on peut trouver sur le site ci-dessus.
+*/
+
+.taillelegende{
+  font-size: 12px;
+}
+
+
+  input[type="checkbox"].dev {
+    display: none;
+  }
+  input[type="checkbox"].dev + label {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+    padding:2px;
+    background-color: grey ;
+    transition: all 0.5s ;
+  }
+  input[type="checkbox"].dev + label::before {
+    box-sizing: border-box;
+    display: block;
+    content: "";
+    height: calc(1.5rem - 4px);
+    width: calc(1.5rem - 4px);
+    border-radius: 50%;
+    background-color: black;
+    transition: all 0.5s ;
+  }
+  input[type="checkbox"].dev:checked + label {
+    background-color: #00B7E8 ;
+  }
+  input[type="checkbox"].dev:checked + label::before {
+    margin-left: 1.5rem ;
+  }
+
+/*Gestion des boutons de tir orienté ou pas */
+  input[type="radio"].tir {
+    display: none;
+  }
+  input[type="radio"].tir + label {
+    border-radius: 5px;
+    border: 1px dashed grey;
+  }
+  input[type="radio"].tir:checked + label {
+    border-radius:5px;
+    background-color: grey;
+    border: 1px solid grey;
+  }
+
+
+.texte{
+  font-family: 'Play', sans-serif;
+  font-size: large;
+  text-align: center;
+  text-shadow:0 0 1px white,0 0 100px white,0px 0px 50px white, 0 0 50px white;
+}
+
+  /* Gestion de l'ensemble des actions possibles */
+
+  #commandes{
+  position:absolute;
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+  height: 95%;
+  width:95%;
+  z-index: 500;
+  margin-left: 8px;
+
+  font-family: 'Cinzel';
+  text-shadow: 1px 1px 2px black;
+  color: white;
+  padding: 4px;
+  text-align: center;
+  }
+
+  #boutons-commandes{
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+  }
+
+  #objet1{
+    margin: 2%;
+    flex-grow: 1;
+    align-self: center;
+    background-color: red;
+    border-radius: 20px;
+  }
+
+  #objet2{
+    margin: 2%;
+    flex-grow: 1;
+    align-self: center;
+    background-color: red;
+    border-radius: 20px;
+  }
+
+  #objet3{
+    margin: 2%;
+    flex-grow: 1;
+    align-self: center;
+    background-color: red;
+    border-radius: 20px;
+  }
+
+  #objet4{
+    flex-grow: 1;
+    align-self: center;
+    margin: 2%;
+    background-color: red;
+    border-radius: 20px;
+  }
+
+  #objet5{
+    flex-grow: 1;
+    align-self: center;
+    margin: 2%;
+    background-color: red;
+    border-radius: 20px;
+
+  }
+
+
+/* Gestion du tableau présentant la base de données en mode développement*/
+
+
+  .table {
+    font-size:12px;
+    color:#333333;
+    width:100%;
+    border-width: 1px;
+    border-color: #729ea5;
+    border-collapse: collapse;
+    justify-content: center;
+  }
+  .table th {font-size:12px;
+    background-color:#00B7E8;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #729ea5;
+    text-align:left;}
+  .table tr {background-color:#d4e3e5;}
+  .table td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+  .table tr:hover {background-color:#ffffff;}
+
+
+  /* Responsive web design */
+
+
+  @media (max-width: 500px) {
+    #contenu-jeu{
+      grid-template-columns: 100% 0%;
+      grid-template-rows: 1fr 0.5fr;
+    }
+    #jeu{
+      grid-row: 1;
+      width: 100%;
+    }
+
+    #info{
+      grid-row: 2;
+      grid-column: 1;
+    }
+
+  }
