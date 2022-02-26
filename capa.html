@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="jeu/img/logo.png"/>
+
+    <link rel="stylesheet" type="text/css" href="jeu/css/jeu_style.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+     crossorigin=""/>
+     <link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet/master/leaflet.css" />
+     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+
+     <title>CAPA</title>
+  </head>
+<body>
+  <!-- L'architecture et le placement des div est présenté dans la documentation développeur sous forme d'un schéma -->
+  <div id="contenu-jeu">
+    <div id="jeu">
+
+      <div id=commandes>
+        <div id="boutons-commandes">
+
+          <div id="objet1">
+            <button id = "observation" class="bouton"> Observation</button>
+          </div>
+          <div id=objet2>
+            <button id = "assaut" class="bouton"> Assaut</button>
+          </div>
+          <div id=objet3>
+          <button id = "tir" class="bouton"> Tir </button>
+          </div>
+          <div id=objet4>
+            <button id = "protection" class="bouton"> Protection </button>
+          </div>
+          <div id="objet5">
+          <button id = "recuperation" class="bouton"> Récupération </button>
+          </div>
+        </div>
+
+      </div>
+       <div id='map'></div>
+      </div>
+
+    <div id="info">
+
+      <div id="info-jeu">
+        <div id="capacite"><p>1024</p></div>
+        <div id="logo">
+          <img src="jeu/img/capabis.png"  />
+        </div>
+      </div>
+
+      <div id="info-chat" class='scroller'>
+        <h1 class="texte">Chat</h1>
+        <div id="websocket" class="texte">
+          <form action="#" id="chatbox" >
+            <input class="texte" type="text" name="message" placeholder="Votre message" />
+            <p></p>
+            <input class="bouton_envoyer" type="submit" />
+          </form>
+          <p id="bdd"></p>
+          <div id="messages"></div>
+        </div>
+      </div>
+
+      <div id="info-websocket">
+
+        <h3 class="texte">Contrôle et tests unitaires</h3>
+
+        <input type="checkbox" class="dev" id="dev">
+        <label for="dev"></label>
+        <label class="taillelegende">
+          <br><strong>Mode développement</strong><br>
+          <i>
+            Le mode développement permet d'effectuer les tests unitaires utiles.
+            (pour le développement du jeu uniquement mais à masquer ensuite)
+          </i>
+        </label>
+
+
+        <div id="gestion_tir">
+          <p>
+            <input type="radio" name="tir" class="tir" id="tir_oriente" checked>
+            <label for="tir_oriente">Mode Orienté</label>
+
+            <input type="radio" name="tir" class="tir" id="tir_tournant" >
+            <label for="tir_tournant">Mode Tournant<br></label>
+            <label class="taillelegende"><strong>Sélectionnez le mode de tir</strong><br> <i>Plus d'informations dans la documentation programmeur</i></label>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div id='tests_unitaires'>
+     <h1 class="texte">Tableau des joueurs</h1>
+
+    <table id="joueur" class="table" border="1">
+    <tr>
+      <th>Identifiant</th><th>Camp</th><th>Nord</th><th>Est</th><th>Orientation</th><th>Capa</th><th>Etat</th><th>Lat_Cible</th><th>Long_Cible</th><th>Rayon</th><th>Action</th><th>Recharge</th><th>Attaquant</th><th>Pseudo</th>
+    </tr>
+
+
+    </table>
+
+  </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+       crossorigin="">
+    </script>
+    <script src="https://cdn.leafletjs.com/leaflet/master/leaflet.js"></script>
+    <script src="/jeu/javascript/jeu_architecture.js" type="text/javascript"></script>
+
+</body>
+</html>
