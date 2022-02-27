@@ -18,8 +18,7 @@ Pour visualiser l'interface graphique correspondant à une partie, rendez-vous �
 Vous pouvez simuler le fait de jouer sous un pseudonyme en tapant votre pseudo dans l'URl comme ceci : <br/> https://vincentheau-capa.alwaysdata.net/capa.html?=pseudo
 
 ### 1.2 Comprendre l'interface
-Pour comprendre l'interface et l'ensembmle des options qui y sont disponibles, suivez la documentation utilisateur 
-
+Reportez-vous au Manuel d'Utilisation pour prendre en main l'interface graphique.
 
 ## 2. Réutiliser le code
 ### 2.1 Installation en local
